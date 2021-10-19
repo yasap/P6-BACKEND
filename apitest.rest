@@ -1,0 +1,4 @@
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{"email":"uthaipriya31@amazon.com" ,"password":"Priya21" }
