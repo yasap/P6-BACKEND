@@ -19,4 +19,4 @@ const storage = multer.diskStorage({
 
 module.exports = multer({storage: storage}).single('image');
  
-//check on OC about multer//
+

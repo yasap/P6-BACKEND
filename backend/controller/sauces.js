@@ -35,15 +35,16 @@ exports.getAllSauces = (req,res,next)=>{
   };
   // create the sauces
 exports.createsauces = (req, res, next) => {
-  
-  req.body.sauce = JSON.parse(req.body.sauce);
-  console.log(req.body);
-  const url = req.protocol + '://' + req.get('host');
+  console.log("test: ",req.body);
+  // req.body.sauce = JSON.parse(req.body.sauce);
+ 
+  // const url = req.protocol + '://' + req.get('host');
   
   const sauce = new sauces({
       userId: req.body.sauce.userId,
       name: req.body.sauce.name,
-      imageUrl: url + '/images/' + req.file.filename,
+      // imageUrl: url + '/images/' + req.file.filename,
+      imageUrl :req.body.sauce.imageUrl,
       description: req.body.sauce.description,
       heat: req.body.sauce.heat,
       mainPepper: req.body.sauce.mainPepper,
@@ -62,16 +63,17 @@ exports.createsauces = (req, res, next) => {
       }
   ).catch(
       (error) => {
-          res.status(401).json({
+          res.status(500).json({
               message: error
           });
       }
   );
 };
-// Unauthorized
+// server error
 
 
 exports.modifysauces = (req, res, next) => {
+  console.log("test: ",req.body);
 let sauce = new sauces({ _id: req.params.id });
 if (req.file) {
   const url = req.protocol + "://" + req.get("host");
@@ -84,7 +86,8 @@ if (req.file) {
     manufacturer: req.body.sauce.manufacturer,
     description: req.body.sauce.description,
     mainPepper: req.body.sauce.mainPepper,
-    imageUrl: url + "/images/" + req.file.filename,
+    //imageUrl: url + "/images/" + req.file.filename,
+    imageUrl :req.body.sauce.imageUrl,
     heat: req.body.sauce.heat,
   };
 }else {

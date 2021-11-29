@@ -43,6 +43,7 @@
     "mocha": "1.21.5",
     "mongoose": "^6.0.11",
     "mongoose-unique-validator": "^3.0.0",
+    "multer": "^1.4.3",
     "nyc": "11.8.0"
   },
   "engines": {
@@ -68,7 +69,6 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "multer": "^1.4.3"
+    "jsonwebtoken": "^8.5.1"
   }
 }

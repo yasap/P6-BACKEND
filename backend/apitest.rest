@@ -2,3 +2,29 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {"email":"uthaipriya33@amazon.com" ,"password":"Priya11" }
+
+###
+POST http://localhost:3000/api/sauces
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc3ODM1MTksImV4cCI6MTYzNzg2OTkxOX0.9w5w5WXY8EkG2NdJw4potPpf7iWUCW4QODQEitU7upA
+###
+PUT  http://localhost:3000/api/sauces/:id 
+Content-Type: : Content-Type: application/json
+
+###
+DELETE  http://localhost:3000/api/sauces/:id 
+Content-Type: : Content-Type: application/json
+
+
+###
+POST  http://localhost:3000/api/sauces/:id/like
+Content-Type: : Content-Type: application/json
+{
+    "sauce": {
+    "name": "spicy",
+    "manufacturer": "hot sauces",
+    "description": "medium spicy",
+    "mainPepper": "pepper",
+    "heat": 2 , 
+    "userId" : "618195f04c335d33403ea4d9",
+    "imageUrl": "http://localhost:3000/images/vcam_4.jpg1637094589315.jpg"}}
